@@ -37,11 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    #libs
+    'cart',
     # my apps
     'product',
-]
+    'account',
 
+]
+CART_SESSION_ID = 'cart'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -81,9 +84,9 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pyshop_db1',
-        'USER': 'kani',
-        'PASSWORD': '1',
+        'NAME': 'shop_db',
+        'USER': 'test_user',
+        'PASSWORD': '12',
         'HOST': 'localhost',
         'PORT': 5432
     }
@@ -135,3 +138,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'account/login/'
+
+LOGOUT_REDIRECT_URL = '/'
